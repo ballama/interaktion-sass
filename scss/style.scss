@@ -7,16 +7,22 @@ body{
     background-color: partial.$bg-color;
 
         p{
-            font-size: 16px;
+            font-size: 30px;
             color: partial.$text-color;
             line-height: 1.5;
             font-family: partial.$font;
         }
 
-        h1, h2, h3, h4, h5, h6{
+        h1, h2, h3, h4, h5{
             font-weight: 600;
+            font-size: 60px;
             color: partial.$h-color;
             font-family: partial.$h-font;
+        }
+
+        h6{
+            font-family: partial.$p-font;
+            font-size: 40px;
         }
 }
 
@@ -122,7 +128,6 @@ main{
             color: partial.$h-color;
             grid-column: 1/7;
             text-align: center;
-            font-size: 30px;
         }
 
         .cta-wrapper{
@@ -193,43 +198,21 @@ main{
         }
 }
 
-/* Tekst og billede sektion */
-.txt-img-section{
+
+
+/* Venus media værdier */
+.venus{
     grid-column: 1/7;
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
-}
+    grid-template-columns: repeat(6, 1fr);
 
-.txt{
-    grid-column: 1/5;
-    background-color: partial.$secondary-color;
-    padding: 2em 4em 4em 4em;
-
-        p{
-            color: partial.$bg-color;
+        .venus-1{
+            grid-column: 1/3;
         }
 
-        p:nth-of-type(4){
-            margin-bottom: 3em;
+        .venus-2{
+            grid-column: 4/7;
         }
-
-        h2{
-            color: partial.$bg-color;
-            text-align: left;
-        }
-}
-
-.secondary-button{
-    @include partial.btn($bg-color: transparent);
-    border: 2px solid #ffffff;
-}
-
-.billede{
-    grid-column: 5/8;
-    background-image: url(../img/presentation.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
 }
 
 /* Kontaktformular */
@@ -247,7 +230,6 @@ main{
     margin: 4em auto; 
 
         h4{
-            font-size: 25px;
             margin-bottom: 0;
             margin-left: 0.5em;
         }
@@ -293,51 +275,77 @@ input[type=submit]{
 
 /* Footer */
 footer:nth-of-type(1){
-    grid-column: 1/6;
+    grid-column: 1/7;
     background-color: partial.$footer-color;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     padding: 1em 4em;
 
-        p, h4{
-            color: partial.$text-color;
+        p{
+            font-size: 30px;
             line-height: 0.5;
         }
 
-        h4{
-            font-size: 18px;
+        h6{
+            font-size: 40px;
+            color: partial.$text-color;
         }
 
         a{
             color: partial.$primary-color;
+        }
+}
+
+.footer-left{
+    grid-column: 1/3;
+}
+
+.footer-mid{
+    grid-column: 3/5;
+
+        a{
+            color: partial.$text-color;
+            padding: partial.$padding;
+            margin: partial.$padding;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+}
+
+.footer-right{
+    grid-column: 5/7;
+    line-height: 0;
+}
+
+/* Footer bund */
+footer:nth-of-type(2){
+    grid-column: 1/7;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    text-align: center;
+
+        .bund-left{
+            grid-column: 1/4;
+                p{
+                    color: partial.$primary-color;
+                }
         }
 
         .logo-footer{
             width: 100px;
             height: auto;
         }
-}
 
-.footer-left{
-    grid-column: 1/2;
-}
-
-.footer-right{
-    grid-column: 2/3;
-    text-align: right;
-    margin: auto 0;
-}
-
-/* Footer bund */
-footer:nth-of-type(2){
-    grid-column: 1/6;
-    background-color: partial.$secondary-color;
-    text-align: center;
-
-        p{
-            color: partial.$bg-color;
+        .bund-right{
+            grid-column: 4/7;
         }
 }
+
+
+
+
+
 
 /*****----- Mobil -----*****/
 @media screen and (max-width: 900px){
